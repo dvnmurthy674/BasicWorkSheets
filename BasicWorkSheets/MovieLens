@@ -1,0 +1,16 @@
+1.Effect of occupations on ratings
+1. SELECT occupations.occupation, count(*)FROM users
+JOIN ratingsON(ratings.userid=users.userid)
+JOIN occupations on(users.occupation=occupations.id)
+WHERE rating=5
+GROUP BY occupations.occupation
+2. SELECT occupations.occupation,count(*) FROM users
+JOIN occupations ON(occupations.id=users.occupation)
+JOIN ratings ON(ratings.userid=users.userid)
+WHERE rating=5
+GROUP BYoccupations.occupation,gender;
+2. Effect of age on ratings
+1.SELECTusers.age,count(*) FROM ratings
+JOIN users ON(ratings.userid=users.userid)
+ WHERE rating=5
+GROUP BY users.age;
